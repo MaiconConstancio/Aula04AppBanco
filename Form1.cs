@@ -29,19 +29,63 @@ namespace Aula04AppBanco
 
             valor = Double.Parse(txtValor.Text); //Caixinha de texto
             saldo = Double.Parse(lblSaldo.Text.Replace("R$:", ""));  // É ONDE TA O R$ e converte em numero
-            double soma = saldo + valor;
 
-            lblSaldo.Text = $"R$: {soma}";
+
+            if (txtDeposito.Text == "SAQUE")
+            {
+                double resultado = saldo - valor;
+                lblSaldo.Text = $"R$: {resultado}";
+            }
+            else
+            {
+                double resultado = saldo + valor;
+                lblSaldo.Text = $"R$: {resultado}";
+            }
+
+
+            //lblSaldo.Text = $"R$: {resultado}";
 
             // ------------------------------------------- FAZER NOVAMENTE PQ A SALA N ENTENDEU --------------------------------------
             //-------------------------------------- |MESMA COISA| ------------------------------------------------------------
 
-            //double valor = double.Parse(txtValor.Text);
-            //double saldo = Double.Parse(lblSaldo.Text.Replace("R$:", ""));
+            //double valor = double.parse(txtvalor.text);
+            //double saldo = double.parse(lblsaldo.text.replace("r$:", ""));
             //double soma = saldo + valor;
-            //lblSaldo.Text = $"R$: {soma}";
-
+            //lblsaldo.text = $"r$: {soma}";
+                        
             //------------------------------------------------------------------------------------------------------------------
+
+            //------------------------------------------ |DEPOSITAR OU SACAR| ---------------------------------------------------
+
+        }
+
+        private void btnSacar_Click(object sender, EventArgs e)
+        {
+            btnDepositar.BackColor = Color.DarkGreen;
+            btnDepositar.ForeColor = Color.Lime;
+
+            btnSacar.BackColor = Color.Lime;
+            btnSacar.ForeColor = Color.DarkGreen;
+            txtDeposito.Text = "SAQUE";
+        }
+
+        private void btnDepositar_Click(object sender, EventArgs e)
+        {
+            // Pintar o botão de Depositar
+            btnDepositar.BackColor = Color.Lime;
+            btnDepositar.ForeColor = Color.DarkGreen;
+
+            // Pintar o botão de sacar
+            btnSacar.BackColor = Color.DarkGreen;
+            btnSacar.ForeColor = Color.Lime;
+            txtDeposito.Text = "DEPÓSITO";
+
+        }
+
+        private void btnExtrato_Click(object sender, EventArgs e)
+        {
+            FormsDoExtrato telaExtrato = new FormsDoExtrato();
+            telaExtrato.Show();
         }
     }
 }

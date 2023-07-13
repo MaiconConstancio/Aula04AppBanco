@@ -30,13 +30,13 @@ namespace Aula04AppBanco
         private void InitializeComponent()
         {
             this.GrupoOperaçoes = new System.Windows.Forms.GroupBox();
+            this.btnSacar = new System.Windows.Forms.Button();
+            this.btnDepositar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDeposito = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtValor = new System.Windows.Forms.TextBox();
-            this.btnDepositar = new System.Windows.Forms.Button();
-            this.btnSacar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,9 +58,37 @@ namespace Aula04AppBanco
             this.GrupoOperaçoes.TabStop = false;
             this.GrupoOperaçoes.Text = "Operações disponíveis";
             // 
+            // btnSacar
+            // 
+            this.btnSacar.BackColor = System.Drawing.Color.DarkGreen;
+            this.btnSacar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSacar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSacar.ForeColor = System.Drawing.Color.Lime;
+            this.btnSacar.Location = new System.Drawing.Point(122, 19);
+            this.btnSacar.Name = "btnSacar";
+            this.btnSacar.Size = new System.Drawing.Size(98, 35);
+            this.btnSacar.TabIndex = 5;
+            this.btnSacar.Text = "Sacar";
+            this.btnSacar.UseVisualStyleBackColor = false;
+            this.btnSacar.Click += new System.EventHandler(this.btnSacar_Click);
+            // 
+            // btnDepositar
+            // 
+            this.btnDepositar.BackColor = System.Drawing.Color.Lime;
+            this.btnDepositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDepositar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDepositar.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnDepositar.Location = new System.Drawing.Point(18, 19);
+            this.btnDepositar.Name = "btnDepositar";
+            this.btnDepositar.Size = new System.Drawing.Size(98, 35);
+            this.btnDepositar.TabIndex = 4;
+            this.btnDepositar.Text = "Depositar";
+            this.btnDepositar.UseVisualStyleBackColor = false;
+            this.btnDepositar.Click += new System.EventHandler(this.btnDepositar_Click);
+            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtDeposito);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.txtValor);
@@ -68,6 +96,28 @@ namespace Aula04AppBanco
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(202, 123);
             this.panel1.TabIndex = 3;
+            // 
+            // txtDeposito
+            // 
+            this.txtDeposito.AutoSize = true;
+            this.txtDeposito.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeposito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.txtDeposito.Location = new System.Drawing.Point(29, 18);
+            this.txtDeposito.Name = "txtDeposito";
+            this.txtDeposito.Size = new System.Drawing.Size(93, 18);
+            this.txtDeposito.TabIndex = 3;
+            this.txtDeposito.Text = "DEPÓSITO";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label1.Location = new System.Drawing.Point(29, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Informe o valor:";
             // 
             // btnSalvar
             // 
@@ -90,54 +140,6 @@ namespace Aula04AppBanco
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(149, 20);
             this.txtValor.TabIndex = 0;
-            // 
-            // btnDepositar
-            // 
-            this.btnDepositar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnDepositar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDepositar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDepositar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnDepositar.Location = new System.Drawing.Point(18, 19);
-            this.btnDepositar.Name = "btnDepositar";
-            this.btnDepositar.Size = new System.Drawing.Size(98, 35);
-            this.btnDepositar.TabIndex = 4;
-            this.btnDepositar.Text = "Depositar";
-            this.btnDepositar.UseVisualStyleBackColor = false;
-            // 
-            // btnSacar
-            // 
-            this.btnSacar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnSacar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSacar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSacar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSacar.Location = new System.Drawing.Point(122, 19);
-            this.btnSacar.Name = "btnSacar";
-            this.btnSacar.Size = new System.Drawing.Size(98, 35);
-            this.btnSacar.TabIndex = 5;
-            this.btnSacar.Text = "Sacar";
-            this.btnSacar.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(29, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Informe o valor:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(29, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "DEPÓSITO";
             // 
             // lblSaldo
             // 
@@ -185,6 +187,7 @@ namespace Aula04AppBanco
             this.btnExtrato.TabIndex = 7;
             this.btnExtrato.Text = "Ver extrato";
             this.btnExtrato.UseVisualStyleBackColor = false;
+            this.btnExtrato.Click += new System.EventHandler(this.btnExtrato_Click);
             // 
             // Form1
             // 
@@ -213,7 +216,7 @@ namespace Aula04AppBanco
         private System.Windows.Forms.Button btnSacar;
         private System.Windows.Forms.Button btnDepositar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtDeposito;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtValor;

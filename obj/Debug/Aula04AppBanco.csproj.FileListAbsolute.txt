@@ -8,3 +8,4 @@ C:\Users\maicon.sconstancio\source\repos\Aula04AppBanco\Aula04AppBanco\obj\Debug
 C:\Users\maicon.sconstancio\source\repos\Aula04AppBanco\Aula04AppBanco\obj\Debug\Aula04AppBanco.exe
 C:\Users\maicon.sconstancio\source\repos\Aula04AppBanco\Aula04AppBanco\obj\Debug\Aula04AppBanco.pdb
 C:\Users\maicon.sconstancio\source\repos\Aula04AppBanco\Aula04AppBanco\obj\Debug\Aula04AppBanco.Form1.resources
+C:\Users\maicon.sconstancio\source\repos\Aula04AppBanco\Aula04AppBanco\obj\Debug\Aula04AppBanco.FormsDoExtrato.resources
