@@ -12,6 +12,8 @@ namespace Aula04AppBanco
 {
     public partial class Form1 : Form
     {
+
+        List<string> extratos = new List<string>(); 
         public Form1()
         {
             InitializeComponent();
@@ -35,11 +37,14 @@ namespace Aula04AppBanco
             {
                 double resultado = saldo - valor;
                 lblSaldo.Text = $"R$: {resultado}";
+                extratos.Add($"SAQUE no valor de R$ {valor}");
+
             }
             else
             {
                 double resultado = saldo + valor;
                 lblSaldo.Text = $"R$: {resultado}";
+                extratos.Add($"DEPÓSITO no valor de R$ {valor}");
             }
 
 
@@ -85,6 +90,7 @@ namespace Aula04AppBanco
         private void btnExtrato_Click(object sender, EventArgs e)
         {
             FormsDoExtrato telaExtrato = new FormsDoExtrato();
+            telaExtrato.extratos = extratos;
             telaExtrato.Show();
         }
     }

@@ -30,6 +30,7 @@ namespace Aula04AppBanco
         private void InitializeComponent()
         {
             this.label5 = new System.Windows.Forms.Label();
+            this.listExtratos = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // label5
@@ -45,15 +46,27 @@ namespace Aula04AppBanco
             this.label5.Text = "Extrato Bancario";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
+            // listExtratos
+            // 
+            this.listExtratos.HideSelection = false;
+            this.listExtratos.Location = new System.Drawing.Point(26, 84);
+            this.listExtratos.Name = "listExtratos";
+            this.listExtratos.Size = new System.Drawing.Size(209, 145);
+            this.listExtratos.TabIndex = 8;
+            this.listExtratos.UseCompatibleStateImageBehavior = false;
+            this.listExtratos.View = System.Windows.Forms.View.List;
+            // 
             // FormsDoExtrato
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(15)))), ((int)(((byte)(4)))));
             this.ClientSize = new System.Drawing.Size(267, 268);
+            this.Controls.Add(this.listExtratos);
             this.Controls.Add(this.label5);
             this.Name = "FormsDoExtrato";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.FormsDoExtrato_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -62,5 +75,6 @@ namespace Aula04AppBanco
         #endregion
 
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListView listExtratos;
     }
 }

@@ -12,6 +12,7 @@ namespace Aula04AppBanco
 {
     public partial class FormsDoExtrato : Form
     {
+        public List<string> extratos = new List<string>();
         public FormsDoExtrato()
         {
             InitializeComponent();
@@ -21,6 +22,18 @@ namespace Aula04AppBanco
         {
             FormsDoExtrato telaExtrato = new FormsDoExtrato();
             telaExtrato.Show();
+        }
+
+        private void FormsDoExtrato_Load(object sender, EventArgs e)
+        {
+            //listExtratos.Items.Add("");
+
+
+            for (int i = 0; i < extratos.Count; i++) //em vez de usar o contador vc usa o i, (antes e depois) (contador++;) agora == (i++;)
+            {
+                listExtratos.Items.Add(extratos[i]);
+            }
+
         }
     }
 }
